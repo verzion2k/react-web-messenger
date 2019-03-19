@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
-import Nav from '../nav/Nav';
 import './sass/Main.scss';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faSearch } from '@fortawesome/free-solid-svg-icons';
+import SearchMessege from '../search_messege/SearchMessege';
+import Nav from '../nav/Nav';
 
-library.add(faBars);
+library.add(faBars, faSearch);
 
 export default class Main extends Component {
 	lib;
 	render() {
-		return <Nav />;
+		return (
+			<div>
+				<Nav />
+				<SearchMessege />
+			</div>
+		);
 	}
 }

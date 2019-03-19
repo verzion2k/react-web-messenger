@@ -44,7 +44,7 @@ export default class Nav extends Component {
 							)
 						}
 					>
-						<FontAwesomeIcon icon="bars" />
+						<FontAwesomeIcon icon="bars" color="#f2f2f2" size="2x" />
 					</button>
 				</div>
 

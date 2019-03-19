@@ -1,0 +1,37 @@
+.search {
+	padding: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #6fcf97;
+	&__form__wrapper {
+		position: relative;
+	}
+	&__form {
+		width: 100%;
+		display: flex;
+		align-items: center;
+	}
+	&__input {
+		height: 28px;
+		background: #f6f6f6;
+		border-radius: 4.12952px;
+		font-size: 12px;
+		line-height: normal;
+		color: #bdbdbd;
+		margin-right: 12px;
+		text-align: center;
+		padding: 0 32px;
+		border: 0;
+		outline: none;
+	}
+	&__input::placeholder {
+		font-size: 12px;
+		line-height: normal;
+		color: #bdbdbd;
+	}
+	&__icon {
+		position: absolute;
+		left: 10%;
+	}
+}
