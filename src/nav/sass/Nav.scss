@@ -51,17 +51,26 @@
 		font-weight: normal;
 		font-size: 12px;
 		line-height: normal;
-		padding-right: 35px;
+		width: 100%;
 		color: #bdbdbd;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		padding-left: 11px;
 	}
-	&__item:last-child {
+	&__theme {
 		position: relative;
+		width: 92px;
+		margin-right: 35px;
+		margin: 0 auto;
 	}
-	&__item:last-child::after {
+	&__theme__icon {
 		position: absolute;
-		content: url(../icons/chevron.svg);
-		top: 18%;
-		left: 58%;
+		top: 25%;
+		right: 4%;
+	}
+	&__theme__icon--rotate {
+		transform: rotate(-90deg);
 	}
 }
 

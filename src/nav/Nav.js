@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import settings from './icons/settings.svg';
 import save from './icons/save.svg';
 import inbox from './icons/inbox.svg';
+import chevron from './icons/chevron.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './sass/Nav.scss';
 
@@ -10,7 +11,8 @@ export default class Nav extends Component {
 		super(props);
 
 		this.state = {
-			collapseNav: false
+			collapseNav: false,
+			openSelectInput: false
 		};
 	}
 
@@ -20,8 +22,14 @@ export default class Nav extends Component {
 		});
 	};
 
+	handleSelectOnClick = () => {
+		this.setState({
+			openSelectInput: !this.state.openSelectInput
+		});
+	};
+
 	render() {
-		const { collapseNav } = this.state;
+		const { collapseNav, openSelectInput } = this.state;
 		return (
 			<nav className="navbar">
 				<div className="navbar__header">
@@ -62,17 +70,34 @@ export default class Nav extends Component {
 						<p className="navbar__link">Trash</p>
 					</li>
 					<li className="navbar__item">
-						<select className="navbar__theme__select">
-							<option value="mint" className="navbar__theme__color">
-								Mint...
-							</option>
-							<option value="red" className="navbar__theme__color">
-								Red...
-							</option>
-							<option value="blue" className="navbar__theme__color">
-								Blue...
-							</option>
-						</select>
+						<div className="navbar__theme">
+							<select
+								className="navbar__theme__select"
+								onClick={this.handleSelectOnClick}
+								onChange={this.handleSelectOnClick}
+							>
+								<option value="mint" className="navbar__theme__color">
+									Mint...
+								</option>
+								<option value="red" className="navbar__theme__color">
+									Red...
+								</option>
+								<option value="blue" className="navbar__theme__color">
+									Blue...
+								</option>
+							</select>
+							<img
+								src={chevron}
+								alt="chevron"
+								className={
+									!openSelectInput ? (
+										'navbar__theme__icon'
+									) : (
+										'navbar__theme__icon navbar__theme__icon--rotate'
+									)
+								}
+							/>
+						</div>
 					</li>
 				</ul>
 			</nav>
