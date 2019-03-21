@@ -11,16 +11,9 @@ export default class Nav extends Component {
 		super(props);
 
 		this.state = {
-			collapseNav: false,
 			openSelectInput: false
 		};
 	}
-
-	handleOnClick = () => {
-		this.setState({
-			collapseNav: !this.state.collapseNav
-		});
-	};
 
 	handleSelectOnClick = () => {
 		this.setState({
@@ -29,13 +22,14 @@ export default class Nav extends Component {
 	};
 
 	render() {
-		const { collapseNav, openSelectInput } = this.state;
+		const { openSelectInput } = this.state;
+		const { collapseNav } = this.props;
 		return (
 			<nav className="navbar">
 				<div className="navbar__header">
 					<img src={settings} alt="settings" className="navbar__settings" />
 					<button
-						onClick={this.handleOnClick}
+						onClick={this.props.handleOnClick}
 						className={
 							!collapseNav ? (
 								'navbar__toggle__button'

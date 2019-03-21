@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './sass/SearchMessege.scss';
+import './sass/SearchMessage.scss';
 import search from './icons/create-messege.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export default class SearchMessege extends Component {
+export default class SearchMessage extends Component {
 	render() {
 		return (
 			<section className="search">
