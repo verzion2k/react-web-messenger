@@ -5,10 +5,12 @@
 	z-index: 9;
 }
 
-.navbar__collapsed-space {
-	margin-top: 124.66px;
+.main__content {
+	transition: all .25s ease-in-out;
+	margin-top: 118px;
 }
 
-.navbar__opened-space {
-	margin-top: 24.4785rem;
+.main__content--margin {
+	transition: all .25s ease-in-out;
+	margin-top: 304px;
 }

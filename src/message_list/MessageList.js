@@ -5,7 +5,7 @@ import Message from '../message/Message';
 export default class MessageList extends Component {
 	render() {
 		return (
-			<div className="message__list">
+			<ul className="message__list">
 				<Message
 					title="Customer Satisfaction"
 					number="1.2k"
@@ -34,7 +34,7 @@ export default class MessageList extends Component {
 					number="1.1k"
 					desc="Great to hear from you the other day! Would you like..."
 				/>
-			</div>
+			</ul>
 		);
 	}
 }

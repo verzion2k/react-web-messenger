@@ -17,6 +17,7 @@
 		cursor: pointer;
 	}
 	&__toggle__button {
+		font-size: 15px;
 		background: none;
 		border: 0;
 		outline: 0;
@@ -29,40 +30,25 @@
 		color: #6fcf97;
 	}
 	&__list {
-		width: 100%;
+		transition: all 2s linear;
+		display: block;
 	}
 	&__item {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		list-style-type: none;
 		padding-bottom: 14px;
-		text-align: center;
 	}
 	&__link {
+		padding-left: 9px;
 		cursor: pointer;
 	}
 	&__link:hover {
 		color: #6fcf97;
 	}
-	&__theme__select {
-		outline: none;
-		background-color: #f6f6f6;
-		border-radius: 4.12952px;
-		height: 28px;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 12px;
-		line-height: normal;
-		width: 100%;
-		color: #bdbdbd;
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		appearance: none;
-		padding-left: 11px;
-	}
 	&__theme {
-		position: relative;
 		width: 92px;
-		margin-right: 35px;
-		margin: 0 auto;
 	}
 	&__theme__icon {
 		position: absolute;
@@ -85,4 +71,5 @@
 
 .d-none {
 	display: none;
+	opacity: 0;
 }

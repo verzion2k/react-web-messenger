@@ -28,15 +28,15 @@ export default class Main extends Component {
 	render() {
 		const { collapseNav } = this.state;
 		return (
-			<div className="main">
+			<main className="main">
 				<section className="main__header">
 					<Nav handleOnClick={this.handleOnClick} collapseNav={this.state.collapseNav} />
 					<SearchMessage />
 				</section>
-				<section className={!collapseNav ? 'navbar__collapsed-space' : 'navbar__opened-space'}>
+				<aside className={!collapseNav ? 'main__content' : 'main__content--margin'}>
 					<MessageList />
-				</section>
-			</div>
+				</aside>
+			</main>
 		);
 	}
 }

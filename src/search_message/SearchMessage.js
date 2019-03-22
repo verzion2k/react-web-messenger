@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './sass/SearchMessage.scss';
-import search from './icons/create-messege.svg';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import createMessage from './icons/create-messege.svg';
+import search from './icons/search.svg';
 
 export default class SearchMessage extends Component {
 	render() {
@@ -10,10 +10,10 @@ export default class SearchMessage extends Component {
 				<div className="search__form__wrapper">
 					<form className="search__form">
 						<span className="search__icon">
-							<FontAwesomeIcon icon="search" color="#bdbdbd" />
+							<img src={search} alt="search" className="search__icon--size" />
 						</span>
 						<input type="text" className="search__input" placeholder="Search Messages" />
-						<img src={search} alt="search" className="search__image" />
+						<img src={createMessage} alt="search" className="search__image" />
 					</form>
 				</div>
 			</section>

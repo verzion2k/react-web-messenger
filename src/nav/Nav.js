@@ -1,16 +1,55 @@
 import React, { Component } from 'react';
 import settings from './icons/settings.svg';
 import save from './icons/save.svg';
+import trashcan from './icons/trashcan.svg';
+import drafts from './icons/drafts.svg';
 import inbox from './icons/inbox.svg';
+import sent from './icons/sent.svg';
 import chevron from './icons/chevron.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './sass/Nav.scss';
+import Select from 'react-select';
+
+const colourStyles = {
+	control: (styles) => ({
+		...styles,
+		background: '#F6F6F6'
+	}),
+	singleValue: (styles) => ({
+		...styles,
+		fontFamily: 'Rubik',
+		fontStyle: 'normal',
+		fontWeight: 'normal',
+		fontSize: 12,
+		lineHeight: 'normal',
+		color: '#BDBDBD'
+	}),
+	dropdownIndicator: (styles, state) => ({
+		...styles,
+		color: '#BDBDBD',
+		transition: 'all 0.3s ease',
+		transform: state.selectProps.menuIsOpen ? 'rotate(0deg)' : 'rotate(90deg)'
+	}),
+	indicatorSeparator: () => ({
+		width: 0
+	}),
+	option: (styles, state) => ({
+		...styles,
+		color: '#BDBDBD',
+		background: state.isSelected ? styles.color : '#F6F6F6'
+	})
+};
 
 export default class Nav extends Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
+			colourOptions: [
+				{ value: 'mint', label: 'Mint...', color: '#6fcf97' },
+				{ value: 'red', label: 'Red...', color: 'red' },
+				{ value: 'blue', label: 'Blue...', color: 'blue' }
+			],
 			openSelectInput: false
 		};
 	}
@@ -22,11 +61,11 @@ export default class Nav extends Component {
 	};
 
 	render() {
-		const { openSelectInput } = this.state;
+		const { openSelectInput, colourOptions } = this.state;
 		const { collapseNav } = this.props;
 		return (
 			<nav className="navbar">
-				<div className="navbar__header">
+				<header className="navbar__header">
 					<img src={settings} alt="settings" className="navbar__settings" />
 					<button
 						onClick={this.props.handleOnClick}
@@ -38,9 +77,9 @@ export default class Nav extends Component {
 							)
 						}
 					>
-						<FontAwesomeIcon icon="bars" color="#f2f2f2" size="2x" />
+						<FontAwesomeIcon icon="bars" color="#f2f2f2" size="lg" />
 					</button>
-				</div>
+				</header>
 
 				<ul className={collapseNav ? 'navbar__list' : 'navbar__list d-none'}>
 					<li className="navbar__item">
@@ -52,44 +91,25 @@ export default class Nav extends Component {
 						<p className="navbar__link">Saved</p>
 					</li>
 					<li className="navbar__item">
-						<img src={save} alt="drafts" className="navbar__icon" />
+						<img src={drafts} alt="drafts" className="navbar__icon" />
 						<p className="navbar__link">Drafts</p>
 					</li>
 					<li className="navbar__item">
-						<img src={save} alt="sent" className="navbar__icon" />
+						<img src={sent} alt="sent" className="navbar__icon" />
 						<p className="navbar__link">Sent</p>
 					</li>
 					<li className="navbar__item">
-						<img src={save} alt="trash" className="navbar__icon" />
+						<img src={trashcan} alt="trash" className="navbar__icon" />
 						<p className="navbar__link">Trash</p>
 					</li>
 					<li className="navbar__item">
 						<div className="navbar__theme">
-							<select
-								className="navbar__theme__select"
-								onClick={this.handleSelectOnClick}
-								onChange={this.handleSelectOnClick}
-							>
-								<option value="mint" className="navbar__theme__color">
-									Mint...
-								</option>
-								<option value="red" className="navbar__theme__color">
-									Red...
-								</option>
-								<option value="blue" className="navbar__theme__color">
-									Blue...
-								</option>
-							</select>
-							<img
-								src={chevron}
-								alt="chevron"
-								className={
-									!openSelectInput ? (
-										'navbar__theme__icon'
-									) : (
-										'navbar__theme__icon navbar__theme__icon--rotate'
-									)
-								}
+							<Select
+								options={colourOptions}
+								defaultValue={colourOptions[0]}
+								styles={colourStyles}
+								className="react-select"
+								classNamePrefix="react-select"
 							/>
 						</div>
 					</li>
