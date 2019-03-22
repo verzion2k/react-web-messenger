@@ -5,7 +5,6 @@ import trashcan from './icons/trashcan.svg';
 import drafts from './icons/drafts.svg';
 import inbox from './icons/inbox.svg';
 import sent from './icons/sent.svg';
-import chevron from './icons/chevron.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './sass/Nav.scss';
 import Select from 'react-select';
@@ -36,7 +35,7 @@ const colourStyles = {
 	option: (styles, state) => ({
 		...styles,
 		color: '#BDBDBD',
-		background: state.isSelected ? styles.color : '#F6F6F6'
+		background: state.isSelected ? 'red' : '#F6F6F6'
 	})
 };
 
@@ -49,20 +48,14 @@ export default class Nav extends Component {
 				{ value: 'mint', label: 'Mint...', color: '#6fcf97' },
 				{ value: 'red', label: 'Red...', color: 'red' },
 				{ value: 'blue', label: 'Blue...', color: 'blue' }
-			],
-			openSelectInput: false
+			]
 		};
 	}
 
-	handleSelectOnClick = () => {
-		this.setState({
-			openSelectInput: !this.state.openSelectInput
-		});
-	};
-
 	render() {
-		const { openSelectInput, colourOptions } = this.state;
+		const { colourOptions } = this.state;
 		const { collapseNav } = this.props;
+		console.log(colourOptions[0].color);
 		return (
 			<nav className="navbar">
 				<header className="navbar__header">
