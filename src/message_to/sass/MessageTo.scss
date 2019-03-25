@@ -36,6 +36,7 @@
 		padding: 0 32px;
 		border: 0;
 		outline: none;
+		text-overflow: ellipsis;
 	}
 	&__input::placeholder {
 		font-family: Rubik;
