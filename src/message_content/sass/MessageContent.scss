@@ -1,0 +1,27 @@
+.message__content {
+	width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: center;
+	padding: 0 30px;
+	&__title {
+		font-size: 25px;
+		line-height: normal;
+		text-align: center;
+		font-weight: 300;
+		color: #828282;
+		margin-bottom: 5px;
+	}
+	&__desc {
+		font-size: 12.5px;
+		line-height: normal;
+		text-align: center;
+		font-weight: 300;
+		color: #d0d0d0;
+		margin-bottom: 35px;
+	}
+	&__image {
+		width: 75%;
+	}
+}

@@ -40,7 +40,7 @@ export default class Main extends Component {
 	render() {
 		const { collapseNav, showMessage } = this.state;
 		return (
-			<main className="main">
+			<main className={showMessage ? 'main-max' : 'main'}>
 				<header className="main__header">
 					<Nav
 						handleOnClick={this.handleOnClick}
