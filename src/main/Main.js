@@ -5,6 +5,7 @@ import { faBars, faSearch } from '@fortawesome/free-solid-svg-icons';
 import SearchMessage from '../search_message/SearchMessage';
 import Nav from '../nav/Nav';
 import MessageList from '../message_list/MessageList';
+import Footer from '../footer/Footer';
 
 library.add(faBars, faSearch);
 
@@ -29,13 +30,16 @@ export default class Main extends Component {
 		const { collapseNav } = this.state;
 		return (
 			<main className="main">
-				<section className="main__header">
+				<header className="main__header">
 					<Nav handleOnClick={this.handleOnClick} collapseNav={this.state.collapseNav} />
 					<SearchMessage />
-				</section>
+				</header>
 				<aside className={!collapseNav ? 'main__content' : 'main__content--margin'}>
 					<MessageList />
 				</aside>
+				<footer className="main__footer">
+					<Footer />
+				</footer>
 			</main>
 		);
 	}
