@@ -30,15 +30,19 @@
 		color: #6fcf97;
 	}
 	&__list {
-		transition: all 2s linear;
-		display: block;
+		display: flex;
+		flex-flow: column wrap;
+		align-items: center;
+		justify-content: center;
 	}
 	&__item {
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		width: 57px;
+		display: inline-flex;
 		list-style-type: none;
 		padding-bottom: 14px;
+	}
+	&__item:last-child {
+		width: 92px;
 	}
 	&__link {
 		padding-left: 9px;
@@ -46,6 +50,9 @@
 	}
 	&__link:hover {
 		color: #6fcf97;
+	}
+	&__link__drafts {
+		padding-left: 11px;
 	}
 	&__theme {
 		width: 92px;

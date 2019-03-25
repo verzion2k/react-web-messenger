@@ -85,7 +85,7 @@ export default class Nav extends Component {
 					</li>
 					<li className="navbar__item">
 						<img src={drafts} alt="drafts" className="navbar__icon" />
-						<p className="navbar__link">Drafts</p>
+						<p className="navbar__link navbar__link__drafts">Drafts</p>
 					</li>
 					<li className="navbar__item">
 						<img src={sent} alt="sent" className="navbar__icon" />
