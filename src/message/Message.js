@@ -4,9 +4,9 @@ import './sass/Message.scss';
 
 export default class Message extends Component {
 	render() {
-		const { title, number, desc, active, activeWrapper } = this.props;
+		const { title, number, desc, active, activeWrapper, handleOnShow } = this.props;
 		return (
-			<li className={activeWrapper ? activeWrapper : 'message__wrapper'}>
+			<li className={activeWrapper ? activeWrapper : 'message__wrapper'} onClick={handleOnShow}>
 				<article className="message">
 					<header className="message__header">
 						<span className={active} />

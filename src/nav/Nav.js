@@ -54,12 +54,12 @@ export default class Nav extends Component {
 
 	render() {
 		const { colourOptions } = this.state;
-		const { collapseNav } = this.props;
+		const { collapseNav, handleOnShow } = this.props;
 		console.log(colourOptions[0].color);
 		return (
 			<nav className="navbar">
 				<header className="navbar__header">
-					<img src={settings} alt="settings" className="navbar__settings" />
+					<img src={settings} alt="settings" className="navbar__settings" onClick={handleOnShow} />
 					<button
 						onClick={this.props.handleOnClick}
 						className={

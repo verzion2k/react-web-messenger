@@ -1,37 +1,39 @@
-.search {
-	padding: 16px;
+.message__to {
+	padding: 16px 57px;
+	background: #e0e0e0;
 	display: flex;
-	justify-content: center;
 	align-items: center;
-	background-color: #6fcf97;
-	&__form__wrapper {
-		position: relative;
-	}
+	justify-content: center;
 	&__form {
-		width: 100%;
+		position: relative;
 		display: flex;
 		align-items: center;
+		width: 100%;
 	}
-	&__form:focus-within &__icon {
-		transition: 0.5s all ease;
-		left: 2%;
+	&__form:before {
+		content: 'To: ';
+		position: absolute;
+		font-family: Rubik;
+		font-style: normal;
+		font-weight: 300;
+		font-size: 12px;
+		line-height: normal;
+		color: #b0b0b0;
+		left: 10px;
 	}
 	&__input {
-		-webkit-transition: width .35s ease-in-out;
-		transition: all .35s ease-in-out;
+		width: 100%;
 		font-family: Rubik;
 		font-style: normal;
 		font-weight: 300;
 		font-size: 12px;
 		line-height: normal;
 		color: #bdbdbd;
-		max-width: 179px;
 		height: 28px;
 		background: #f6f6f6;
 		border-radius: 4.12952px;
 		margin-right: 12px;
 		padding: 0 32px;
-		text-align: center;
 		border: 0;
 		outline: none;
 	}
@@ -42,10 +44,5 @@
 		font-size: 12px;
 		line-height: normal;
 		color: #bdbdbd;
-	}
-	&__icon {
-		position: absolute;
-		transition: 0.5s all ease;
-		left: 12%;
 	}
 }
