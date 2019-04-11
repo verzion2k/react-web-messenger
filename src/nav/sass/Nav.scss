@@ -80,3 +80,39 @@
 	display: none;
 	opacity: 0;
 }
+
+@media (min-width: 1200px) {
+	.navbar {
+		padding: 14px;
+		height: 100%;
+		&__toggle__button {
+			display: none;
+		}
+		&__header {
+			justify-content: flex-end;
+		}
+		&__list {
+			padding-top: 17px;
+			height: 100%;
+		}
+		&__item:last-child {
+			flex: 1;
+		}
+		&__theme {
+			display: flex;
+			justify-content: center;
+			align-items: flex-end;
+		}
+	}
+
+	.d-none {
+		display: flex;
+		align-items: flex-start;
+		justify-content: flex-start;
+		opacity: 1;
+	}
+
+	.css-10nd86i {
+		width: 100%;
+	}
+}

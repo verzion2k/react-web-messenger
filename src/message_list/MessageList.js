@@ -20,16 +20,15 @@ export default class MessageList extends Component {
 					desc="Great to hear from you the other day! Would you like..."
 					handleOnShow={this.props.handleOnShow}
 				/>
-				<Message title="User Poll" number="5k" desc="Great to hear from you the other day! Would you like..." />
 				<Message
-					title="Market Research"
-					number="3.2k"
+					title="User Poll"
+					number="5k"
 					desc="Great to hear from you the other day! Would you like..."
 					handleOnShow={this.props.handleOnShow}
 				/>
 				<Message
-					title="Engagment Results"
-					number="1.1k"
+					title="Market Research"
+					number="3.2k"
 					desc="Great to hear from you the other day! Would you like..."
 					handleOnShow={this.props.handleOnShow}
 				/>

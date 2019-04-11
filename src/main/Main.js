@@ -8,6 +8,7 @@ import MessageList from '../message_list/MessageList';
 import Footer from '../footer/Footer';
 import MessageContent from '../message_content/MessageContent';
 import MessageTo from '../message_to/MessageTo';
+import Media from 'react-media';
 
 library.add(faBars, faSearch);
 
@@ -47,11 +48,29 @@ export default class Main extends Component {
 						collapseNav={this.state.collapseNav}
 						handleOnShow={this.handleOnShow}
 					/>
-					{showMessage ? <MessageTo /> : <SearchMessage />}
 				</header>
-				<aside className={!collapseNav ? 'main__content' : 'main__content--margin'}>
-					{showMessage ? <MessageContent /> : <MessageList handleOnShow={this.handleOnShow} />}
-				</aside>
+
+				<Media query="(min-width: 1200px)">
+					{(matches) =>
+						matches ? (
+							<React.Fragment>
+								<aside className="main__content">
+									<SearchMessage />
+									<MessageList />
+								</aside>
+
+								<section className="main__messages">
+									<MessageTo />
+									<MessageContent />
+								</section>
+							</React.Fragment>
+						) : (
+							<aside className={!collapseNav ? 'main__content' : 'main__content--margin'}>
+								{showMessage ? <MessageTo /> : <SearchMessage />}
+								{showMessage ? <MessageContent /> : <MessageList handleOnShow={this.handleOnShow} />}
+							</aside>
+						)}
+				</Media>
 				<footer className="main__footer">
 					<Footer />
 				</footer>
