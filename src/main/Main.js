@@ -65,7 +65,7 @@ export default class Main extends Component {
 								</section>
 							</React.Fragment>
 						) : (
-							<aside className={!collapseNav ? 'main__content' : 'main__content--margin'}>
+							<aside className={!collapseNav ? 'main__content' : 'main__content main__content--margin'}>
 								{showMessage ? <MessageTo /> : <SearchMessage />}
 								{showMessage ? <MessageContent /> : <MessageList handleOnShow={this.handleOnShow} />}
 							</aside>

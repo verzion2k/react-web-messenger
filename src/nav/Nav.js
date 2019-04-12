@@ -103,6 +103,7 @@ export default class Nav extends Component {
 								styles={colourStyles}
 								className="react-select"
 								classNamePrefix="react-select"
+								menuPlacement="auto"
 							/>
 						</div>
 					</li>

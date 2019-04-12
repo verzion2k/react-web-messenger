@@ -1,7 +1,5 @@
 .navbar {
 	padding: 20px;
-	display: flex;
-	flex-flow: column;
 	background-color: #4f4f4f;
 	color: #f2f2f2;
 	font-family: 'Raleway', sans-serif;
@@ -83,8 +81,9 @@
 
 @media (min-width: 1200px) {
 	.navbar {
-		padding: 14px;
+		padding: 20px 14px;
 		height: 100%;
+		box-shadow: none;
 		&__toggle__button {
 			display: none;
 		}
